@@ -43,7 +43,7 @@ int main()
 
     	while(1)
     	{
-    		cout<<"Player 1"<<endl;
+    		cout<<"Player 1:Enter the coordinate of the box which you want to fill"<<endl;
     		cin>>x1>>y1;
     		if(x1>=0 && x1<=2 && y1>=0 && y1<=2 && a[x1][y1]==' ')
     			break;
@@ -89,7 +89,7 @@ int main()
     		{
     		while(1)
     	{
-    		cout<<"Player 2"<<endl;
+    		cout<<"Player 2:Enter the coordinate of the box which you want to fill"<<endl;
     		cin>>x2>>y2;
     		if(x2>=0 && x2<=2 && y2>=0 && y2<=2 && a[x2][y2]==' ')
     			break;
@@ -116,7 +116,7 @@ int main()
 }
     	if(r2==3 || c2==3 || d2==3)
     	{
-    		cout<<"Player 2 wins!"<<endl;
+    		cout<<"Player 2 wins! Thanks for playing!"<<endl;
     		break;
     	}
     	}
