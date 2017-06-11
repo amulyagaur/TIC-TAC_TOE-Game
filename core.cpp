@@ -1,3 +1,8 @@
+/*
+Author : Amulya Gaur
+Run this code in c++ ide and follow the instructions.
+Have fun!
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
