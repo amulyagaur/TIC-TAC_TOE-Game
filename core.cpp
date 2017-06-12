@@ -32,7 +32,7 @@ int main()
     cout<<endl<<"Lets play!"<<endl;
     while(1)
     {
-    	int x1,y1,x2,y2,empty1=0,empty2=0,r1,c1,d1,r2,c2,d2;
+    	int x1,y1,x2,y2,empty1=0,empty2=0,r1,c1,d11,d12,r2,c2,d21,d22;
     	for(int i=0;i<3;i++)
     		for(int j=0;j<3;j++)
     			if(a[i][j]==' ')
@@ -48,7 +48,7 @@ int main()
 
     	while(1)
     	{
-    		cout<<"Player 1:Enter the coordinate of the box which you want to fill"<<endl;
+    		cout<<"Player 1"<<endl;
     		cin>>x1>>y1;
     		if(x1>=0 && x1<=2 && y1>=0 && y1<=2 && a[x1][y1]==' ')
     			break;
@@ -58,7 +58,7 @@ int main()
     	a[x1][y1]='X';
     	cout<<"playground looks like:"<<endl;
     	print(a);
-    	r1=0,c1=0,d1=0;
+    	r1=0,c1=0,d11=0,d12=0;
     	for(int i=0;i<3;i++)
     	{
     		if(a[x1][i]=='X')
@@ -70,10 +70,19 @@ int main()
     	{
     		for(int i=0,j=0;i<3 && j<3;i++,j++)
     			if(a[i][j]=='X')
-    				d1++;
+    				d11++;
+    	}
+    	if((x1+y1)==2)
+    	{
+    		if(a[0][2]=='X')
+    			d12++;
+    		if(a[1][1]=='X')
+    			d12++;
+    		if(a[2][0]=='X')
+    			d12++;
     	}
     }
-    	if(r1==3 || c1==3 || d1==3)
+    	if(r1==3 || c1==3 || d11==3 || d12==3)
     	{
     		cout<<"Player 1 wins! Thanks for playing!"<<endl;
     		break;
@@ -94,7 +103,7 @@ int main()
     		{
     		while(1)
     	{
-    		cout<<"Player 2:Enter the coordinate of the box which you want to fill"<<endl;
+    		cout<<"Player 2"<<endl;
     		cin>>x2>>y2;
     		if(x2>=0 && x2<=2 && y2>=0 && y2<=2 && a[x2][y2]==' ')
     			break;
@@ -104,7 +113,7 @@ int main()
     	a[x2][y2]='O';
     	cout<<"playground looks like:"<<endl;
     	print(a);
-    	 r2=0,c2=0,d2=0;
+    	 r2=0,c2=0,d21=0,d22=0;
     	for(int i=0;i<3;i++)
     	{
     		if(a[x2][i]=='O')
@@ -116,12 +125,21 @@ int main()
     	{
     		for(int i=0,j=0;i<3 && j<3;i++,j++)
     			if(a[i][j]=='O')
-    				d2++;
+    				d21++;
+    	}
+    	if((x2+y2)==2)
+    	{
+    		if(a[0][2]=='O')
+    			d22++;
+    		if(a[1][1]=='O')
+    			d22++;
+    		if(a[2][0]=='O')
+    			d22++;
     	}
 }
-    	if(r2==3 || c2==3 || d2==3)
+    	if(r2==3 || c2==3 || d21==3 || d22==3)
     	{
-    		cout<<"Player 2 wins! Thanks for playing!"<<endl;
+    		cout<<"Player 2 wins!"<<endl;
     		break;
     	}
     	}
